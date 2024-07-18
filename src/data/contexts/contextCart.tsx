@@ -1,7 +1,13 @@
+import { createContext } from "react"
+
+const CartContext = createContext<any>(null)
+
 export function ProviderCart(props: any) {
     return (
-        <div className="border border-red-500">
+        <CartContext.Provider value={{numero: 100}}>
             {props.children}
-        </div>
+        </CartContext.Provider>
     )
 }
+
+export default CartContext
